@@ -40,9 +40,12 @@ jobs:
       
     - name: setup-msbuild
       uses: microsoft/setup-msbuild@v1.1
+
+    - name: Navigate to Workspace
+      run: cd $GITHUB_WORKSPACE
     
     - name: Restore Packages
       run: nuget restore DirectOutput.sln
     
     - name: Build solution
-      run: msbuild DirectOutput.sln -t:rebuild -property:Configuration=Release
+      run: msbuild DirectOutput.sln /p:platform="Any CPU" /p:configuration="Release"
