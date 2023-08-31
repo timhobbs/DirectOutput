@@ -53,4 +53,5 @@ jobs:
       run: nuget restore DirectOutput.sln
     
     - name: Build solution
-      run: msbuild DirectOutput.sln /p:platform="Any CPU" /p:configuration="Release" /p:AllowUnsafeBlocks=true
+      # run: msbuild DirectOutput.sln /p:platform="Any CPU" /p:configuration="Release" /p:AllowUnsafeBlocks=true
+      run: msbuild DOFsetup/DOFSetup.wixproj /p:platform="Any CPU" /p:configuration="Release" /p:AllowUnsafeBlocks=true
