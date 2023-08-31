@@ -53,4 +53,4 @@ jobs:
       run: nuget restore DirectOutput.sln
     
     - name: Build solution
-      run: msbuild DirectOutput.sln /p:platform="Any CPU" /p:configuration="Release" /unsafe
+      run: msbuild DirectOutput.sln /p:platform="Any CPU" /p:configuration="Release" /p:AllowUnsafeBlocks=true
